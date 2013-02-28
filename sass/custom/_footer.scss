@@ -1,0 +1,15 @@
+/* ===================
+    Footer
+   =================== */
+
+#footer {
+	background-color: $gold-color;
+    padding: 20px 0;
+}
+
+
+@keyframes wave{
+  100%{
+    background-position:0px 7px, 0 -4px, 0 -4px;
+  }
+}

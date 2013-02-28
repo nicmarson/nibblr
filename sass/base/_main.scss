@@ -1,0 +1,57 @@
+/*------------------------------------*\
+    $MAIN
+\*------------------------------------*/
+html{
+    font:#{($base-font-size/16px)*1em}/#{$line-height-ratio} sans-serif;
+    overflow-y:scroll;
+    min-height:100%;
+}
+body {
+    background-color: $dark-color;
+    color: $white-color;
+}
+
+.container {
+	padding-right: 20px;
+	padding-left: 20px;
+	*zoom: 1;
+}
+
+.container:before,
+.container:after {
+	display: table;
+	line-height: 0;
+	content: "";
+}
+
+.container:after {
+	clear: both;
+}
+
+.mini-bite {
+
+	> div {
+		float: left;
+	}
+	.totals {
+		font-size: 72px;
+
+		a {
+			background-color: $dark-color;
+			color: $yellow-color;
+			font-size: 18px;
+			text-decoration: none;
+			text-transform: uppercase;
+		}
+	}
+}
+
+#main {
+ 	background-color: $lightBlue-color;
+	background-image:radial-gradient(circle at center 35px, rgba(242,179,61,1), rgba(242,155,48,1) 0, rgba(242,155,48,1) 30px, $lightBlue-color 0);
+	background-position: 0 100%;
+	background-repeat: repeat-x;
+	background-size: 40px 20px;
+ 	padding-bottom: 40px;
+ 	padding-top: 40px;
+}
