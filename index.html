@@ -9,7 +9,7 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
-
+        <link href="http://fnt.webink.com/wfs/webink.css/?project=70721A41-1DF2-4E3E-8BFB-274F78FA40D2&fonts=3A4B6ABF-4F19-2528-D737-9924403B2A03:f=RonniaCond-Bold,9A7BAF54-6E29-E371-1DC9-3E1E17604943:f=CronosPro-Italic,CF741F42-2A39-1A6D-BA7E-7FC58295D145:f=CreteRounded-Italic,741523D5-28BB-38D7-153A-061C4EDD1B98:f=CreteRounded-Regular,FA68F59B-E825-986E-84C3-DE323C036B77:f=CronosPro-Regular,29EF48F7-066C-60AE-0960-199E7161D510:f=CronosPro-Bold,21F00420-6993-E987-6773-470857732D13:f=CronosPro-SemiboldCaptIt" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="assets/css/style.css">
         <script src="assets/js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
@@ -38,8 +38,9 @@
             </nav>
             <div class="container">
                 <form class="input--get_url  gw">
-                    <div class="g  one-two-thirds  lap-two-thirds  desk-three-quarters">
-                        <input type="url" class="btn text-input" placeholder="enter a URL">
+                    <div class="g  one-two-thirds  lap-two-thirds  desk-three-quarters  input-container">
+                        <input type="url" class="btn text-input" id="hiddenInput" placeholder="enter a URL">
+                        <div id="input"></div>
                     </div>
                     <div class="g  one-one-third  lap-one-third  desk-one-quarter">
                         <input type="button" class="btn btn--full loz" value="Go fish">
@@ -61,6 +62,12 @@
                    <div class="totals greybox greybox--large"><a class="btn btn--full" href="#">images</a> 12</div>
                </div>
             </section>
+            <div id="pb">   
+        <div id="progress">
+            <div id="done">Done!</div>
+        </div>
+        Loading...
+    </div>
             <section class="container mini-bite">
                 <div class="one-two-thirds  lap-two-thirds  desk-three-quarters">
                    <ul class="nav  nav--fit  nav--block">
