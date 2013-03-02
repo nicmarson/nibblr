@@ -2,88 +2,114 @@
     Header
    =================== */
 
-@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed);
-
-#header {
-    background-image: 
-    radial-gradient(circle at center -10px, rgba(43,191,189,0), rgba(43,191,189,0) 68px, rgba(43,191,189,1) 70px, $lightBlue-color 0),
-    radial-gradient(circle at left -10px, $dark-color, $dark-color 70px, transparent 0);
-    background-position: 0 100%;
-    background-repeat: repeat-x;
-    background-size: 100px 70px;
-    border-top: 1px solid $red-color;
-    padding-bottom: 70px;
-    padding-top: 70px;
+#top {
+    background: linear-gradient(transparent, $dark-color);
+    border-top: 3px solid #631515;
+    padding-bottom: 200px;
+    padding-top: 100px;
+    position: relative;
 
     a {
         background-color: $red-color;
+        @include box-shadow(inset 4px -4px 0 rgba(0,0,0, .5));
         color: $white-color;
-        font-size: 18px;
-        font-weight: bold;
-        line-height: 22px;
+        font-family: $brand-face;
+        font-size: 24px;
+        line-height: 1;
         margin: 0;
-        padding: 8px 15px;
+        padding: 8px 25px 11px;
         text-decoration: none;
-        @include transition-property(all);
-        @include transition-duration(.2s);
-        @include transition-timing-function(ease-in);
+        text-shadow: 0 1px 1px rgba(0,0,0,.5);
+        @include transition(all .2s ease-in);
 
         &:hover {
             padding-top: 15px;
             text-decoration: none;
         }
     }
-    nav {
-        position: absolute;
-        top: 0;
-        width: 100%;
+    nav,
+    .logo {
+        float: left;
     }
     .nav {
         margin: 0;
+
+        li {
+            float: left;
+        }
     }
-    .input--get_url {
-
-        input {
-            border: none;
-            font-family: 'Roboto Condensed', sans-serif;
-            font-size: 40px;
-            line-height: 1;
-            width: 100%;
-        }
-        .input-container {
-            position: relative;
-        }
-        .loz {
-            background-color: rgba(255,255,255,.1);
-
-            &:hover {
-                background-color: rgba(255,255,255,.2);
-            }
-        }
-        .text-input {
-            background: rgba(255,255,255,.9);
-            padding-bottom: .4em;
-            padding-top: .5em;
-        }
+    .button-container {
+        padding-left: 6px;
+    }
+    .input-container {
+        position: relative;
     }
 }
 
-#hiddenInput {
-    font-size: 40px;
-    font-family: 'Roboto Condensed', sans-serif;
-    background-color: #808080;
+.banner--site {
+    left: 0;
     position: absolute;
-    opacity: 0.4;
-    margin-top: -22px;
-    margin-left: -125px;
-    opacity: 0;
-    filter: alpha(opacity = 0);
+    right: 0;
+    top: 0;
+
+    .btn--sign_in {
+        padding-right: 2px;
+    }
+    .btn-register {
+        padding-left: 2px;
+    }
 }
 
-#input {
-    position: absolute;
-    margin-top: -20px;
-    margin-left: -120px;
+.input--get_url {
+
+    > div {
+        float: left;
+    }
+    input,
+    #inputAnim {
+        border: none;
+        font-family: $serif-regular;
+        font-size: 40px;
+        line-height: 1;
+        width: 100%;
+    }
+    .btn {
+        background-color: rgba(242,46,46, .8);
+        @include border-right-radius(2px);
+        @include box-shadow(-6px 6px 0 #631515, -5px 5px 0 #631515, -4px 4px 0 #631515, -3px 3px 0 #631515, -2px 2px 0 #631515, -1px 1px 0 #631515);
+        color: $white-color;
+        margin-left: 0;
+        margin-top: -6px;
+        @include transition(all .1s ease-in);
+
+        &:hover {
+            background-color: $red-color;
+        }
+        &:active {
+            @include box-shadow(none);
+            margin-left: -12px;
+            margin-top: 0;
+        }
+    }
+    .text-input,
+    #inputAnim {
+        background: $white-color;
+        @include border-left-radius(2px);
+        @include box-shadow(inset 5px 5px 0 rgba(0,0,0, .25));
+        color: $dark-color;
+        padding: 20px 20px 16px;
+    }
+    #inputAnim {
+        height: 82px;
+        margin-top: -82px;
+        position: absolute;
+    }
+}
+
+.js #header {
+    .input--get_url .text-input {
+        @include opacity(0);
+    }
 }
 
 .letterContainer {

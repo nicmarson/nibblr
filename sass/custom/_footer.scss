@@ -3,13 +3,13 @@
    =================== */
 
 #footer {
+    background: 
+	linear-gradient(135deg, $yellow-color 25%, transparent 25%) -50px 0,
+	linear-gradient(225deg, $yellow-color 25%, transparent 25%) -50px 0,
+	linear-gradient(315deg, $gold-color 25%, transparent 25%),
+	linear-gradient(45deg, $gold-color 25%, transparent 25%);
 	background-color: $gold-color;
-    padding: 20px 0;
-}
-
-
-@keyframes wave{
-  100%{
-    background-position:0px 7px, 0 -4px, 0 -4px;
-  }
+	background-repeat: repeat-x;
+	background-size: 100px 100px;
+    padding: 100px 0;
 }

@@ -13,24 +13,28 @@ window.onload = function() {
 
     isMobile = navigator && navigator.platform && navigator.platform.match(/^(iPad|iPod|iPhone)$/);
 
-    isIE = (navigator.appName == 'Microsoft Internet Explorer');
+    isIE = (navigator.appName === 'Microsoft Internet Explorer');
 
-    input = document.getElementById('input');
+    input = document.getElementById('inputAnim');
 
-    hiddenInput = document.getElementById('hiddenInput');
+    hiddenInput = document.getElementById('inputURL');
     hiddenInput.focus();
 
     cursor = document.createElement('cursor');
     cursor.setAttribute('class', 'blink');
     cursor.innerHTML = "|";
 
-    if (!isMobile && !isIE) input.appendChild(cursor);
+    if (!isMobile && !isIE) {
+        input.appendChild(cursor);
+    }
 
     function refresh() {
 
         inputLock = true;
 
-        if (targetContent.length - lastContent.length == 0) return;
+        if (targetContent.length - lastContent.length === 0) {
+            return;
+        }
 
         var v = targetContent.substring(0, lastContent.length + 1);
 
@@ -46,11 +50,13 @@ window.onload = function() {
 
             var d2 = document.createElement('div');
 
-            var animClass = (i % 2 == 0) ? 'letterAnimTop' : 'letterAnimBottom';
+            var animClass = (i % 2 === 0) ? 'letterAnimTop' : 'letterAnimBottom';
 
-            var letterClass = (lastContent.charAt(i) == l) ? 'letterStatic' : animClass;
+            var letterClass = (lastContent.charAt(i) === l) ? 'letterStatic' : animClass;
 
-            if (letterClass != 'letterStatic') blinkPadding = true;
+            if (letterClass !== 'letterStatic') {
+                blinkPadding = true;
+            }
 
             d2.setAttribute('class', letterClass);
 
@@ -68,22 +74,27 @@ window.onload = function() {
 
         cursor.style.paddingLeft = (blinkPadding) ? '22px' : '0';
 
-        if (!isMobile && !isIE) input.appendChild(cursor);
+        if (!isMobile && !isIE) {
+            input.appendChild(cursor);
+        }
 
-        if (targetContent.length - lastContent.length > 1) setTimeout(refresh, 150);
-        else inputLock = false;
+        if (targetContent.length - lastContent.length > 1) {
+            setTimeout(refresh, 150);
+        } else {
+            inputLock = false;
+        }
 
         lastContent = v;
     }
 
     if (document.addEventListener) {
 
-        document.addEventListener('touchstart', function(e) {
+        document.addEventListener('touchstart', function() {
             clearInterval(autoWriteTimer);
             targetContent = lastContent;
         }, false);
 
-        document.addEventListener('click', function(e) {
+        document.addEventListener('click', function() {
             clearInterval(autoWriteTimer);
             targetContent = lastContent;
             hiddenInput.focus();
@@ -96,14 +107,18 @@ window.onload = function() {
             hiddenInput.addEventListener('input', function(e) {
                 e.preventDefault();
                 targetContent = hiddenInput.value;
-                if (!inputLock) refresh();
+                if (!inputLock) {
+                    refresh();
+                }
 
             }, false);
         } else {
             setInterval(function() {
                 targetContent = hiddenInput.value;
 
-                if (targetContent != lastContent && !inputLock) refresh();
+                if (targetContent !== lastContent && !inputLock) {
+                    refresh();
+                }
             }, 100);
         }
 
@@ -112,8 +127,10 @@ window.onload = function() {
     hiddenInput.value = "";
 
     autoWriteTimer = setTimeout(function() {
-        if (lastContent != "") return;
+        if (lastContent !== "") {
+            return;
+        }
         targetContent = "enter your URL...";
         refresh();
     }, 2000);
-}
+};

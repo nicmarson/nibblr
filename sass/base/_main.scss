@@ -2,72 +2,166 @@
     $MAIN
 \*------------------------------------*/
 html{
-    font:#{($base-font-size/16px)*1em}/#{$line-height-ratio} sans-serif;
+    font:#{($base-font-size/16px)*1em}/#{$line-height-ratio} "CronosPro-Regular", sans-serif;
     overflow-y:scroll;
     min-height:100%;
 }
 body {
-    background-color: $dark-color;
+    background: 
+	linear-gradient(135deg, #191919 25%, transparent 25%) -50px 0,
+	linear-gradient(225deg, #191919 25%, transparent 25%) -50px 0,
+	linear-gradient(315deg, #191919 25%, transparent 25%),
+	linear-gradient(45deg, #191919 25%, transparent 25%);
+	background-color: $dark-color;
+	background-position: -50px 1px, -50px 1px, 0 1px, 0 1px;
+	background-size: 100px 100px;
     color: $white-color;
 }
 
 .container {
-	padding-right: 20px;
-	padding-left: 20px;
+	margin-right: 5%;
+	margin-left: 5%;
+	position: relative;
+	z-index: 1;
 	*zoom: 1;
 }
 
-.container:before,
-.container:after {
-	display: table;
-	line-height: 0;
-	content: "";
-}
-
-.container:after {
-	clear: both;
-}
-
-.mini-bite {
-
-	> div {
-		float: left;
-	}
-	.totals {
-		font-size: 72px;
-
-		a {
-			background-color: $dark-color;
-			color: $yellow-color;
-			font-size: 18px;
-			text-decoration: none;
-			text-transform: uppercase;
-		}
-	}
+.desk-margin {
+	margin-left: 5%;
+	margin-right: 5%;
+	position: relative;
 }
 
 #main {
- 	background-color: $lightBlue-color;
-	background-image:radial-gradient(circle at center 35px, rgba(242,179,61,1), rgba(242,155,48,1) 0, rgba(242,155,48,1) 30px, $lightBlue-color 0),
-		url(http://subtlepatterns.com/patterns/cartographer.png);
-	background-position: 0 100%;
-	background-repeat: repeat-x;
-	background-size: 40px 20px;
- 	padding-bottom: 40px;
- 	padding-top: 40px;
+	background-color: $lightBlue-color;
+	background-color: rgba(43,191,189, .9);
+	padding-bottom: 100px;
+ 	padding-top: 100px;
+ 	position: relative;
+
+ 	header {
+ 		margin-bottom: 60px;
+
+ 		h1 {
+ 			background-color: rgba(0,0,0, .1);
+ 			color: $white-color;
+ 		}
+ 		a {
+ 			color: $link-color;
+ 			display: inline-block;
+ 			font-size: 22px;
+ 		}
+ 		.label {
+ 			background-color: $red-color;
+ 			color: $white-color;
+ 			display: inline-block;
+ 			font-family: $sans-serif-semiboldCaptIt;
+ 			font-size: 20px;
+ 			font-style: inherit;
+ 			margin-right: 10px;
+ 			padding: 5px 10px;
+ 		}
+ 		.meta {
+ 			background-color: $white-color;
+ 			background-color:  rgba(255,255,255, .8);
+ 			padding-right: 10px;
+ 		}
+ 	}
+ 	.container {
+ 		position: relative;
+ 	}
 }
+
+.mini-bite {
+	margin-bottom: 20px;
+
+	> div {
+		float: left;
+
+		> ul {
+			margin: 0;
+		}
+	}
+	.image {
+		height: 240px;
+		overflow: hidden;
+		width: 240px;
+
+		img {
+			width: 100%;
+		}
+	}
+	.totals {
+		background-color: $white-color;
+		color: $dark-color;
+		height: 240px;
+		text-align: center;
+
+		a {
+	        background-color: $red-color;
+	        color: $white-color;
+	        font-family: $brand-face;
+	        font-size: 24px;
+	        line-height: 1;
+	        margin: 0;
+	        padding: 8px 15px;
+	        text-decoration: none;
+	        text-shadow: 0 1px 1px rgba(0,0,0,.5);
+	        @include transition(all .2s ease-in);
+	    }
+	    b {
+			font: normal 120px/1 $serif-regular;
+	    }
+	}
+}
+
+.fishingline {
+	height: 1000px;
+	left: 0;
+	position: absolute;
+	top: -500px;
+	width: 5px;
+	z-index: 1;
+}
+.meta {
+	display: inline-block;
+	vertical-align: middle;
+
+	a {
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+}
+
+.wavetop,
+.seafloor {
+    bottom: 0;
+	height: 100px;
+	left: 0;
+	position: absolute;
+	right: 0;
+}
+
+.wavetop {
+    background: linear-gradient(315deg, rgba(43,191,189, .9) 25%, transparent 25%),
+    linear-gradient(45deg, rgba(43,191,189, .9) 25%, transparent 25%);
+    background-position: 0 100%;
+	background-repeat: repeat-x;
+	background-size: 100px 100px;
+}
+
+.seafloor {
+	background: linear-gradient(315deg, $yellow-color 25%, transparent 25%),
+    linear-gradient(45deg, $yellow-color 25%, transparent 25%);
+    background-position: 0 100%;
+	background-repeat: repeat-x;
+	background-size: 100px 100px;
+}
+
 #pb {
-	-webkit-box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.5), inset 1px 1px 20px rgba(0, 0, 0, 0.5);        
-    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.5), inset 1px 1px 20px rgba(0, 0, 0, 0.5);
-	background: url(http://subtlepatterns.subtlepatterns.netdna-cdn.com/patterns/subtle_surface.png);
+	@include box-shadow(0px 10px 40px rgba(0,0,0, .5), inset 1px 1px 20px rgba(0,0,0, .5));        
     width:250px;
     height:38px;
-    position:absolute;
-    top:50%;
-    left:50%;
-    margin-top:-19px;
-    margin-left:-125px;
-    border-radius:8px;
     border-top:2px solid #DDD;
     border-left:2px solid #DDD;
     border-bottom:2px solid #BBB;
@@ -81,32 +175,19 @@ body {
     color:#666;
 }
 #progress {
-	-webkit-transition: all 0.3s ease;
-	-moz-transition: all 0.3s ease;
-	-ms-transition: all 0.3s ease;
-	-o-transition: all 0.3s ease;
-	transition: all 0.3s ease;
+	@include transition(all 0.3s ease);
 	height:38px;
 	width:48px;
-	background-color: #0080FF;
-	border-radius:6px;
-	background: #6db3f2;
-	background: -moz-linear-gradient(top,  #6db3f2 0%, #54a3ee 50%, #3690f0 51%, #1e69de 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#6db3f2), color-stop(50%,#54a3ee), color-stop(51%,#3690f0), color-stop(100%,#1e69de)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top,  #6db3f2 0%,#54a3ee 50%,#3690f0 51%,#1e69de 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top,  #6db3f2 0%,#54a3ee 50%,#3690f0 51%,#1e69de 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top,  #6db3f2 0%,#54a3ee 50%,#3690f0 51%,#1e69de 100%); /* IE10+ */
-	background: linear-gradient(to bottom,  #6db3f2 0%,#54a3ee 50%,#3690f0 51%,#1e69de 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6db3f2', endColorstr='#1e69de',GradientType=0 ); /* IE6-8 */
-	-webkit-box-shadow: inset 0px 0px 5px  rgba(0, 0, 0, 0.2), 2px 2px 5px  rgba(0, 0, 0, 0.2);        
-    box-shadow: inset 0px 0px 5px  rgba(0, 0, 0, 0.2), 2px 2px 5px  rgba(0, 0, 0, 0.2);
+	background-color: #6db3f2;
+	@include background-image(linear-gradient(#6db3f2, #54a3ee 50%, #3690f0 51%, #1e69de));
+	@include border-radius(6px);
+	@include box-shadow(inset 0px 0px 5px rgba(0,0,0, .2), 2px 2px 5px rgba(0,0,0, .2));        
     position:absolute;
     overflow:hidden;      
 }
 #done:active {
-	-webkit-box-shadow: inset 0px 0px 18px  rgba(0, 0, 0, 0.4);        
-    box-shadow: inset 0px 0px 18px  rgba(0, 0, 0, 0.4);
-    border-radius:6px;
+    @include box-shadow(inset 0px 0px 18px rgba(0,0,0, .4));
+    @include border-radius(6px);
 }
 #done {
 	text-align:center;
@@ -120,10 +201,6 @@ body {
     cursor:pointer;  
 }
 #pb:hover #progress{
-	-webkit-transition: all 0.3s ease;
-	-moz-transition: all 0.3s ease;
-	-ms-transition: all 0.3s ease;
-	-o-transition: all 0.3s ease;
-	transition: all 0.3s ease;
+	@include transition(all 0.3s ease);
 	width:250px;
 }

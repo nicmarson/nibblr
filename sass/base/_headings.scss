@@ -38,7 +38,8 @@ h6,.zeta{
    </hgroup>
  *
  */
-.hN{
+#{headings()} {
+  font-weight: normal;
 }
 hgroup .hN{
     margin-bottom:0;
@@ -50,11 +51,14 @@ hgroup .hN{
  * promos, etc.
  */
 .giga{
-    @include font-size($giga-size);
+  font-family: $serif-regular;
+  @include font-size($giga-size);
 }
 .mega{
-    @include font-size($mega-size);
+  font-family: $serif-regular;
+  @include font-size($mega-size);
 }
 .kilo{
-    @include font-size($kilo-size);
+  font-family: $serif-regular;
+  @include font-size($kilo-size);
 }

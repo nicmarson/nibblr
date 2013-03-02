@@ -9,6 +9,33 @@
 
 
 /**
+ * Color scheme
+ *
+ * https://kuler.adobe.com/#create/fromacolor
+ */
+$white-color:		#FFFFFF;
+$dark-color:		#292929;
+$lightBlue-color:	#2bbfbd;
+$yellow-color:		#F2B33D;
+$gold-color:		#F29B30;
+$red-color:			#F22E2E;
+$link-color:		#236DBB;
+
+
+/**
+ * Web fonts
+ *
+ * http://www.webink.com/typedrawer/projects/14585
+ */
+$serif-italic:				"CreteRounded-Italic", serif;
+$serif-regular:				"CreteRounded-Regular", serif;
+
+$sans-serif-bold:			"CronosPro-Bold", sans-serif;
+$sans-serif-italic:			"CronosPro-Italic", sans-serif;
+$sans-serif-regular:		"CronosPro-Regular", sans-serif;
+$sans-serif-semiboldCaptIt:	"CronosPro-SemiboldCaptIt", sans-serif;
+
+/**
  * Debug mode will visually highlight any potential markup/accessibility quirks
  * in the browser. Set to `true` or `false`.
  */
@@ -111,7 +138,7 @@ $close-quote:   null;
  * Brand stuff
  */
 $brand-color:       #4a8ec2!default;
-$brand-face:        "Helvetica Neue", sans-serif!default;
+$brand-face:        "RonniaCond-Bold", sans-serif!default;
 
 
 /**
@@ -122,17 +149,4 @@ $brand-face:        "Helvetica Neue", sans-serif!default;
 $base-spacing-unit: $base-line-height!default;
 $half-spacing-unit: $base-spacing-unit / 2!default;
 $line-height-ratio: $base-line-height / $base-font-size;
-
-
-/**
- * Color scheme
- *
- * https://kuler.adobe.com/#create/fromacolor
- */
-$white-color:		#FFFFFF;
-$dark-color:		#292929;
-$lightBlue-color:	#2bbfbd;
-$yellow-color:		#F2B33D;
-$gold-color:		#F29B30;
-$red-color:			#F22E2E;
 
