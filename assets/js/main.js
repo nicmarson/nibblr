@@ -72,7 +72,7 @@ window.onload = function() {
             input.appendChild(content[i]);
         }
 
-        cursor.style.paddingLeft = (blinkPadding) ? '22px' : '0';
+        cursor.style.paddingLeft = (blinkPadding) ? '1em' : '0';
 
         if (!isMobile && !isIE) {
             input.appendChild(cursor);
@@ -97,7 +97,6 @@ window.onload = function() {
         document.addEventListener('click', function() {
             clearInterval(autoWriteTimer);
             targetContent = lastContent;
-            hiddenInput.focus();
         }, false);
 
         if (!isIE) {
@@ -130,7 +129,7 @@ window.onload = function() {
         if (lastContent !== "") {
             return;
         }
-        targetContent = "enter your URL...";
+        targetContent = "enter your URL…";
         refresh();
     }, 2000);
 };

@@ -39,10 +39,12 @@
                     <input type="button" class="btn btn--full" value="Go fish">
                 </div>
             </form>
-            <div class="wavetop"></div>
+            <div class="visual-wavetop animation-wave"></div>
         </header>
 
-        <div id="main" role="main">
+        <div class="visual-boat"></div>
+
+        <div class="main" id="main" role="main">
             <header class="desk-margin">
                 <h1 class="mega">Use of Pricing Tables in Web Design – Starkly Comparison</h1>
                 <p class="meta url"><i class="label">your URL</i><a href="">http://designmodo.com/pricing-tables-web-design/</a></p>
@@ -51,29 +53,43 @@
             <section class="desk-margin mini-bite cf">
                 <div class="one-two-thirds  lap-two-thirds  desk-three-quarters">
                    <ul class="nav  nav--fit  nav--block">
-                       <li class="image"><img src="assets/img/sample/image-01.jpg"/></li>
-                       <li class="image"><img src="assets/img/sample/image-02.jpg"/></li>
-                       <li class="image"><img src="assets/img/sample/image-03.jpg"/></li>
+                        <li class="image" style="background-image: url(assets/img/sample/image-01.jpg);"><label class="checkbox">
+                            <input type="checkbox" id="inlineCheckbox1" value="option1"> 1
+                        </label></li>
+                        <li class="image" style="background-image: url(assets/img/sample/image-02.jpg);"><label class="checkbox">
+                            <input type="checkbox" id="inlineCheckbox2" value="option2"> 2
+                        </label></li>
+                        <li class="image" style="background-image: url(assets/img/sample/image-03.jpg);"><label class="checkbox">
+                            <input type="checkbox" id="inlineCheckbox3" value="option3"> 3
+                        </label></li>
+                        <li class="image" style="background-image: url(assets/img/sample/image-04.jpg);"><label class="checkbox">
+                            <input type="checkbox" id="inlineCheckbox3" value="option3"> 4
+                        </label></li>
+                        <li class="image" style="background-image: url(assets/img/sample/image-05.jpg);"><label class="checkbox">
+                            <input type="checkbox" id="inlineCheckbox3" value="option3"> 5
+                        </label></li>
                    </ul>
                 </div>
                 <div class="one-one-third  lap-one-third  desk-one-quarter">
-                    <div class="totals">
+                    <div class="totals meta">
                         <a class="btn btn--full" href="#">images</a>
                         <b class="total">12</b>
-                        <div id="pb">   
-                            <div id="progress">
-                                <div id="done">Done!</div>
-                            </div>
-                            Loading...
-                        </div>
+                        <button class="btn btn--full">Update</button>
                     </div>
                </div>
             </section>
-            <div class="fishingline"></div>
-            <div class="seafloor"></div>
+
+            <div id="pb">   
+                <div id="progress">
+                    <div id="done">Done!</div>
+                </div>
+                Loading...
+            </div>
+            <div class="visual-fishingline"></div>
+            <div class="visual-seafloor"></div>
         </div> <!-- #main -->
 
-        <footer id="footer" role="contentinfo">
+        <footer id="bottom" role="contentinfo">
             <div class="desk-margin">
                 <div class="one-two-thirds  lap-two-thirds  desk-three-quarters">
                     <h3>footer</h3>

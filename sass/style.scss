@@ -2,14 +2,6 @@
 /*------------------------------------*\
     STYLE.CSS
 \*------------------------------------*/
-/**
- *
- * sass --watch style.scss:style.min.css --style compressed
- *
- * Here we pull in some variables, include the inuit.css framework, then add our
- * project-specific components afterwards.
- */
-
 
 /**
  * Setup
@@ -22,6 +14,9 @@
 /**
  * Custom
  */
-@import "custom/footer";
-@import "custom/header";
+@import "custom/typeplate";
+@import "custom/animate";
+@import "custom/bottom";
+@import "custom/top";
+@import "custom/visuals";
 @import "custom/responsive";

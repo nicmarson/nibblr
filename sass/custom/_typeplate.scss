@@ -34,23 +34,12 @@
    font-family: Ampersand, Georgia, serif;
 }
 
-/**
- *
- *
-   Base Type
- *
- */
-html {
-   font: normal 112.5%/1.65 serif;
-}
-
 body {
    -webkit-hyphens: auto;
    -moz-hyphens: auto;
    -ms-hyphens: auto;
    hyphens: auto;
    word-wrap: break-word;
-   color: #444444;
 }
 
 h1,
@@ -64,65 +53,7 @@ h6 {
    margin-top: 0;
 }
 
-.tera {
-   font-size: 117px;
-   font-size: 6.5rem;
-   margin-bottom: 0.25385rem;
-}
 
-.giga {
-   font-size: 90px;
-   font-size: 5rem;
-   margin-bottom: 0.33rem;
-}
-
-.mega {
-   font-size: 72px;
-   font-size: 4rem;
-   margin-bottom: 0.4125rem;
-}
-
-h1,
-.alpha {
-   font-size: 60px;
-   font-size: 3.33333rem;
-   margin-bottom: 0.495rem;
-}
-
-h2,
-.beta {
-   font-size: 48px;
-   font-size: 2.66667rem;
-   margin-bottom: 0.61875rem;
-}
-
-h3,
-.gamma {
-   font-size: 36px;
-   font-size: 2rem;
-   margin-bottom: 0.825rem;
-}
-
-h4,
-.delta {
-   font-size: 24px;
-   font-size: 1.33333rem;
-   margin-bottom: 1.2375rem;
-}
-
-h5,
-.epsilon {
-   font-size: 21px;
-   font-size: 1.16667rem;
-   margin-bottom: 1.41429rem;
-}
-
-h6,
-.zeta {
-   font-size: 18px;
-   font-size: 1rem;
-   margin-bottom: 1.65rem;
-}
 
 p + p {
    text-indent: 1.5em;
@@ -159,15 +90,6 @@ abbr {
 }
 abbr:hover {
    cursor: help;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-   color: #222222;
 }
 
 .drop-cap:first-letter {
