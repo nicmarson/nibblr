@@ -1,4 +1,14 @@
 
+$(function() {
+
+    var topBanner = $('header#top div.banner--site');
+    var mainElement = $('div#main');
+    mainElement.prepend('<div class="banner--sticky"><div class="desk-margin  banner--site  cf">');
+    var stickyBanner = $('div.banner--sticky');
+    stickyBanner.waypoint('sticky');
+    $('div.banner--sticky div.banner--site').html(topBanner.children().clone());
+});
+
 var input;
 var cursor;
 var hiddenInput;
@@ -133,3 +143,5 @@ window.onload = function() {
         refresh();
     }, 2000);
 };
+
+

@@ -1,13 +1,13 @@
 /*------------------------------------*\
-    $MAIN
+	$MAIN
 \*------------------------------------*/
 html{
-    font:#{($base-font-size/16px)*1em}/#{$line-height-ratio} "CronosPro-Regular", sans-serif;
-    overflow-y:scroll;
-    min-height:100%;
+	font:#{($base-font-size/16px)*1em}/#{$line-height-ratio} "CronosPro-Regular", sans-serif;
+	overflow-y:scroll;
+	min-height:100%;
 }
 body {
-    background: 
+	background: 
 	linear-gradient(135deg, #191919 25%, transparent 25%) -50px 0,
 	linear-gradient(225deg, #191919 25%, transparent 25%) -50px 0,
 	linear-gradient(315deg, #191919 25%, transparent 25%),
@@ -15,7 +15,7 @@ body {
 	background-color: $dark-color;
 	background-position: -50px 1px, -50px 1px, 0 1px, 0 1px;
 	background-size: 100px 100px;
-    color: $white-color;
+	color: $white-color;
 }
 
 .container {
@@ -35,38 +35,38 @@ body {
 .main {
 	background-color: $lightBlue-color;
 	padding-bottom: 100px;
- 	padding-top: 100px;
- 	position: relative;
+	padding-top: 100px;
+	position: relative;
 
- 	header {
- 		margin-bottom: 60px;
+	header {
+		margin-bottom: 60px;
 
- 		h1 {
- 			background-color: $darkBlue-color;
- 			color: $white-color;
- 		}
- 		a {
- 			color: $link-color;
- 			display: inline-block;
- 			font-size: 22px;
- 		}
- 		.label {
- 			background-color: $red-color;
- 			color: $white-color;
- 			display: inline-block;
- 			font-family: $sans-serif-semiboldCaptIt;
- 			font-size: 20px;
- 			font-style: inherit;
- 			margin-right: 10px;
- 			padding: 5px 10px;
- 		}
- 		.meta {
+		h1 {
+			background-color: $darkBlue-color;
+			color: $white-color;
+		}
+		a {
+			color: $link-color;
+			display: inline-block;
+			font-size: 22px;
+		}
+		.label {
+			background-color: $red-color;
+			color: $white-color;
+			display: inline-block;
+			font-family: $sans-serif-semiboldCaptIt;
+			font-size: 20px;
+			font-style: inherit;
+			margin-right: 10px;
+			padding: 5px 10px;
+		}
+		.meta {
 			padding-right: 10px;
- 		}
- 	}
- 	.container {
- 		position: relative;
- 	}
+		}
+	}
+	.container {
+		position: relative;
+	}
 	.meta {
 		background-color: $white-color;
 		background-color:  rgba(255,255,255, .8);
@@ -77,8 +77,27 @@ body {
 	}
 }
 
+.banner--sticky {
+	display: none;
+
+	.banner--site {
+		padding: 10px;
+	}
+}
+.stuck {
+    background-color: $dark-color;
+    @include box-shadow(0 2px 4px 0 rgba(0,0,0, .3));
+    display: block;
+    position:fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+}
+
 .mini-bite {
+	border: none;
 	margin-bottom: 20px;
+	padding: 0;
 
 	> div {
 		float: left;
@@ -87,17 +106,63 @@ body {
 			margin: 0;
 		}
 	}
-	label {
-		background-color: $darkBlue-color;
-		padding: 8px 15px;
+	legend {
+		background-color: $red-color;
+		color: $white-color;
+		font-family: $sans-serif-semiboldCaptIt;
+		font-size: 20px;
+		font-style: inherit;
+		padding: 5px 10px;
+	}
+	.btn,
+	.checkbox {
+		color: $white-color;
+		display: block;
+		font-size: 2rem;
+		line-height: 1;
+		margin-left: 4px;
+		margin-top: -4px;
+		padding: 10px;position: absolute;
+		top: 0;
+		@include transition(all .1s ease-in);
+		width: 100%;
+
+		&:active {
+			margin-left: 1px;
+			margin-top: -1px;
+		}
+	}
+	.btn {
+		background-color: $green-color;
+		@include box-shadow(-4px 4px 0 #04882A, -3px 3px 0 #04882A, -2px 2px 0 #04882A, -1px 1px 0 #04882A);
+
+		&:hover {
+			background-color: $green-color;
+		}
+		&:active {
+			@include box-shadow(-1px 1px 0 #086B24);
+			@include box-shadow(-1px 1px 0 #086B24);
+		}
+	}
+	.checkbox {
+		background-color: rgba(0,0,0, .8);
+		@include box-shadow(-4px 4px 0 #090909, -3px 3px 0 #090909, -2px 2px 0 #090909, -1px 1px 0 #090909);
+
+		&:hover {
+			background-color: $dark-color;
+		}
+		&:active {
+			@include box-shadow(-1px 1px 0 #090909);
+		}
 	}
 	.image {
 		background: url(images/bg.jpg) no-repeat; 
 		-webkit-background-size: cover;
 		   -moz-background-size: cover;
-		        background-size: cover;
+				background-size: cover;
 		height: 240px;
 		overflow: hidden;
+		position: relative;
 		width: 240px;
 
 		img {
@@ -108,24 +173,15 @@ body {
 		background-color: $white-color;
 		color: $dark-color;
 		height: 240px;
+		position: relative;
 		text-align: center;
 		width: 100%;
 
-		a {
-	        background-color: $red-color;
-	        color: $white-color;
-	        font-family: $brand-face;
-	        font-size: 24px;
-	        line-height: 1;
-	        margin: 0;
-	        padding: 8px 15px;
-	        text-decoration: none;
-	        text-shadow: 0 1px 1px rgba(0,0,0,.5);
-	        @include transition(all .2s ease-in);
-	    }
-	    b {
-			font: normal 120px/1 $serif-regular;
-	    }
+		b {
+			display: block;
+			font: normal 10rem/1 $serif-regular;
+			padding-top: 48px;
+		}
 	}
 }
 .meta {
@@ -140,19 +196,19 @@ body {
 
 #pb {
 	@include box-shadow(0px 10px 40px rgba(0,0,0, .5), inset 1px 1px 20px rgba(0,0,0, .5));        
-    width:250px;
-    height:38px;
-    border-top:2px solid #DDD;
-    border-left:2px solid #DDD;
-    border-bottom:2px solid #BBB;
-    border-right:2px solid #BBB;
-    padding:3px;
-    overflow:hidden;
-    text-align:center;
-    line-height:38px;
-    font-size:14px;
-    font-weight:bold;
-    color:#666;
+	width:250px;
+	height:38px;
+	border-top:2px solid #DDD;
+	border-left:2px solid #DDD;
+	border-bottom:2px solid #BBB;
+	border-right:2px solid #BBB;
+	padding:3px;
+	overflow:hidden;
+	text-align:center;
+	line-height:38px;
+	font-size:14px;
+	font-weight:bold;
+	color:#666;
 }
 #progress {
 	@include transition(all 0.3s ease);
@@ -162,23 +218,23 @@ body {
 	@include background-image(linear-gradient(#6db3f2, #54a3ee 50%, #3690f0 51%, #1e69de));
 	@include border-radius(6px);
 	@include box-shadow(inset 0px 0px 5px rgba(0,0,0, .2), 2px 2px 5px rgba(0,0,0, .2));        
-    position:absolute;
-    overflow:hidden;      
+	position:absolute;
+	overflow:hidden;      
 }
 #done:active {
-    @include box-shadow(inset 0px 0px 18px rgba(0,0,0, .4));
-    @include border-radius(6px);
+	@include box-shadow(inset 0px 0px 18px rgba(0,0,0, .4));
+	@include border-radius(6px);
 }
 #done {
 	text-align:center;
-    line-height:38px;
-    font-size:14px;
-    font-weight:bold;
-    color:#EEE;
-    height:38px;
+	line-height:38px;
+	font-size:14px;
+	font-weight:bold;
+	color:#EEE;
+	height:38px;
 	width:250px;
 	text-shadow: 0px -1px 0px rgba(0,0,0,0.2);		
-    cursor:pointer;  
+	cursor:pointer;  
 }
 #pb:hover #progress{
 	@include transition(all 0.3s ease);
